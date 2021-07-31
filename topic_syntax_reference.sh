@@ -6,6 +6,7 @@
 #   - function declaration
 #   - example of a topic
 #   - topic, array
+#   - topic, string splitting
 
 ################################################################################
 
@@ -43,6 +44,20 @@ topic="array"
 announce $topic
 echo "array init, how to save an array to a variable"
 echo "TODO"
+
+################################################################################
+
+# topic, string spltting :
+topic="string splitting"
+announce $topic
+echo "string splitting using an internal field separator"
+IFS=" "
+string="this is a string"
+echo "IFS=$IFS, string=$string"
+read -ra split_string <<< $string
+for element in "${split_string[@]}";do
+  echo "next element is : $element"
+done
 
 ################################################################################
 
