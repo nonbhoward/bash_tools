@@ -47,8 +47,8 @@ echo "TODO"
 
 ################################################################################
 
-# topic, string spltting :
-topic="string splitting"
+# topic, string spltting #1 :
+topic="string splitting #1"
 announce $topic
 echo "string splitting using an internal field separator"
 IFS=" "
@@ -58,6 +58,23 @@ read -ra split_string <<< $string
 for element in "${split_string[@]}";do
   echo "next element is : $element"
 done
+
+################################################################################
+
+# topic, string spltting #2 :
+topic="string splitting #2"
+announce $topic
+echo "string splitting using idiomatic expressions"
+string="1 : learn, 2 : to, 3 : split, 4 : a, 5 : string"
+delimiter=", "
+echo "string=$string, delimiter=$delimiter"
+s=$string$delimiter
+array=();
+while [[ $s ]];do
+  array+=( "${s%%"delimiter"*}" );
+  s=${s#*"$delimiter"};
+done;
+declare -p array
 
 ################################################################################
 
