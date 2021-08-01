@@ -14,10 +14,10 @@ alias go2ba="cd "$PATH_BASH							#
 alias go2py="cd "$PATH_PY							#
 # git										#
 alias cgd="clear && git status && git diff"					#
-alias cgs="clear && git status"							#
+alias cgs="clear && git status && git stash list"				#
 alias gca="git config --list --show-origin"					#
 alias gcga="git config --global --list --show-origin"				#
-alias gdog="git log --all --decorate --oneline --graph"				#
+alias gadog="git log --all --decorate --oneline --graph"			#
 alias gfsb="clear && git fetch && git status && git branch -va"			#
 # ls										#
 alias clh="clear && ls -hl"							#
