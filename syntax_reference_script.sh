@@ -39,7 +39,7 @@ echo "the current directory is : $PWD"
 
 ################################################################################
 
-# topic, array :
+# wip topic, array :
 topic="array"
 announce $topic
 echo "array init, how to save an array to a variable"
@@ -61,7 +61,7 @@ done
 
 ################################################################################
 
-# topic, string spltting #2 :
+# wip topic, string spltting #2 :
 topic="string splitting #2"
 announce $topic
 echo "string splitting using idiomatic expressions"
