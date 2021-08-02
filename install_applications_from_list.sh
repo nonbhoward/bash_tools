@@ -9,7 +9,6 @@
 #	vim
 
 # system specific variables
-# HOME="$(getent passwd "$USER" | awk -F ':' '{print $6}')"
 APPFILE="$HOME/system/applications.txt"
 
 clear
