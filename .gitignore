@@ -1,13 +1,11 @@
 # extensions to ignore
 
+
 # files to ignore
 #.gitignore
-danger_*_edit.sh
-lazy_*_edit.sh
+temp
+
 
 # folders to ignore
 .idea/
-demo_args/files
-SANDBOX/
-
 
