@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
-printf "FSTAB\\n"
+printf "FSTAB FILE\\n"
 printf "$(cat /etc/fstab)\\n"
 
-printf "LSBLK\\n"
-lsblk -f
+printf "FDISK INFO\\n"
+sudo fdisk -l
