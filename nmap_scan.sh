@@ -1,6 +1,7 @@
 #!/bin/bash
 source $(dirname $0)"/local_ips"
 ip_target=""
+printf "ip target is $ip_target\\n"
 ip_range="192.168.1.0-255"
 args_target_ip=(
 	"all-ports" "-v -p-"
@@ -10,16 +11,16 @@ args_target_ip=(
 	"tcp-connect" "-v -sT"
 	"tcp-syn" "-v -sS"
 	"udp-ports" "-v -sU"
-)
+);
 args_target_range=(
 	"list-hosts" "-sL"
-)
+);
 test_args=(
 	"test-heartbleed" "nmap -v -sV -p 443 --script=ssl-heartbleed 192.168.1.0/24"
-)
+);
 execute(){
 	printf "executing $1\\n" && $1
-}
+};
 # process arg == help
 if [ $# -ne 1 ] || [ $@ == help ];then
   printf "args targeting ip : \\n"
