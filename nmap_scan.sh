@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname $0)"/local_ips.sh"
+source $(dirname $0)"/local_ips"
 ip_target=""
 ip_range="192.168.1.0-255"
 args_target_ip=(
