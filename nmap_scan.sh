@@ -15,7 +15,7 @@ args_target_range=(
 	"list-hosts" "-sL"
 )
 test_args=(
-	"test-heartbleed" "nmap -sV -p 443 --script=ssl-heartbleed 192.168.1.0/24"
+	"test-heartbleed" "nmap -v -sV -p 443 --script=ssl-heartbleed 192.168.1.0/24"
 )
 execute(){
 	printf "executing $1\\n" && $1
