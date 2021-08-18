@@ -1,10 +1,9 @@
 # extensions to ignore
 
-
 # files to ignore
 #.gitignore
+local_ips
 temp
-
 
 # folders to ignore
 .idea/
