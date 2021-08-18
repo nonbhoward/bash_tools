@@ -22,13 +22,19 @@ execute(){
 }
 # process arg == help
 if [ $# -ne 1 ] || [ $@ == help ];then
-  printf "ip targeting args are : \\n"
+  printf "args targeting ip : \\n"
   for idx in ${!args_target_ip[@]};do
     if [ $(($idx % 2)) -eq 0 ];then
       printf "\\t${args_target_ip[$idx]}\\n"
     fi
   done
-  printf "test args are : \\n"
+  printf "args targeting range : \\n"
+  for idx in ${!args_target_range[@]};do
+    if [ $(($idx % 2)) -eq 0 ];then
+      printf "\\t${args_target_range[$idx]}\\n"
+    fi
+  done
+  printf "self-contained args : \\n"
   for idx in ${!test_args[@]};do
     if [ $(($idx % 2)) -eq 0 ];then
       printf "\\t${test_args[$idx]}\\n"
