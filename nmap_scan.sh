@@ -2,7 +2,7 @@
 source $(dirname $0)"/local_ips.sh"
 ip_target=""
 ip_range="192.168.1.0-255"
-args_target_ip_target=(
+args_target_ip=(
 	"all-ports" "-v -p-"
 	"common-ports" "-v -F"
 	"detect-os" "-v -A"
@@ -23,9 +23,9 @@ execute(){
 # process arg == help
 if [ $# -ne 1 ] || [ $@ == help ];then
   printf "ip targeting args are : \\n"
-  for idx in ${!args_target_ip_target[@]};do
+  for idx in ${!args_target_ip[@]};do
     if [ $(($idx % 2)) -eq 0 ];then
-      printf "\\t${args_target_ip_target[$idx]}\\n"
+      printf "\\t${args_target_ip[$idx]}\\n"
     fi
   done
   printf "test args are : \\n"
@@ -38,9 +38,9 @@ if [ $# -ne 1 ] || [ $@ == help ];then
 fi
 
 # process args targeting ip address
-for idx in ${!args_target_ip_target[@]};do
-  if [ $1 == "${args_target_ip_target[$idx]}" ] && [ $(($idx % 2)) -eq 0 ];then
-    command="nmap ${args_target_ip_target[$idx+1]} $ip_target"
+for idx in ${!args_target_ip[@]};do
+  if [ $1 == "${args_target_ip[$idx]}" ] && [ $(($idx % 2)) -eq 0 ];then
+    command="nmap ${args_target_ip[$idx+1]} $ip_target"
     execute "$command"
     exit  # execute command and exit
   fi
@@ -65,9 +65,9 @@ for idx in ${!test_args[@]};do
 done
 
 # execute all args
-for idx in ${!args_target_ip_target[@]};do
+for idx in ${!args_target_ip[@]};do
   if [ $1 == all ] && [ $(($idx % 2)) -eq 0 ];then
-    command="nmap ${args_target_ip_target[$idx+1]} $ip_target"
+    command="nmap ${args_target_ip[$idx+1]} $ip_target"
     execute "$command"
   fi
 done
